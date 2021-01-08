@@ -11,7 +11,7 @@
         <!--Budget-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BudgetViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,11 +32,17 @@
                                 <rect key="frame" x="20" y="179" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addRent:" destination="BYZ-38-t0r" eventType="touchDown" id="uwv-WA-T5N"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ar-Ax-msb">
                                 <rect key="frame" x="284" y="179" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="rentRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ew3-3g-1XN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-zJ-i1a">
                                 <rect key="frame" x="20" y="224" width="350" height="16"/>
@@ -48,11 +54,17 @@
                                 <rect key="frame" x="20" y="243" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addPower:" destination="BYZ-38-t0r" eventType="touchDown" id="oeO-xK-aZB"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spy-Pq-pdR">
                                 <rect key="frame" x="284" y="243" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="powerRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LQC-lQ-8Ji"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-85-1tX">
                                 <rect key="frame" x="20" y="288" width="350" height="16"/>
@@ -64,11 +76,17 @@
                                 <rect key="frame" x="20" y="307" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addWater:" destination="BYZ-38-t0r" eventType="touchDown" id="7GY-eD-lKY"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5J-RL-7B3">
                                 <rect key="frame" x="284" y="307" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="waterRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kdB-xg-zqc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-6o-C0m">
                                 <rect key="frame" x="20" y="352" width="350" height="16"/>
@@ -80,11 +98,17 @@
                                 <rect key="frame" x="20" y="371" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addInternet:" destination="BYZ-38-t0r" eventType="touchDown" id="qN7-GQ-3d2"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgB-Ma-NYV">
                                 <rect key="frame" x="284" y="371" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="internetRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gHI-Nt-Yxc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-qt-Sc3">
                                 <rect key="frame" x="20" y="416" width="350" height="16"/>
@@ -96,11 +120,17 @@
                                 <rect key="frame" x="20" y="435" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addPhone:" destination="BYZ-38-t0r" eventType="touchDown" id="m1O-rz-z2h"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZw-kI-Z00">
                                 <rect key="frame" x="284" y="435" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="phoneRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0b-pl-y2I"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="002-DN-0uC">
                                 <rect key="frame" x="20" y="480" width="350" height="16"/>
@@ -112,11 +142,17 @@
                                 <rect key="frame" x="20" y="499" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addFood:" destination="BYZ-38-t0r" eventType="touchDown" id="GMm-cj-NX7"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7T-5t-beV">
                                 <rect key="frame" x="284" y="499" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="foodRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MdU-tH-UPr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaG-L3-hMN">
                                 <rect key="frame" x="20" y="544" width="350" height="16"/>
@@ -128,11 +164,17 @@
                                 <rect key="frame" x="20" y="563" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addTransportation:" destination="BYZ-38-t0r" eventType="touchDown" id="DPh-5X-GKK"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5R-zF-qBw">
                                 <rect key="frame" x="284" y="563" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="transportationRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRw-70-YBj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recreation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hq-fx-4U6">
                                 <rect key="frame" x="20" y="608" width="350" height="16"/>
@@ -144,11 +186,17 @@
                                 <rect key="frame" x="20" y="627" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addRecreation:" destination="BYZ-38-t0r" eventType="touchDown" id="LxG-CG-vNK"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kg-OS-7iQ">
                                 <rect key="frame" x="284" y="627" width="86" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Remind Me"/>
+                                <connections>
+                                    <action selector="recreationRemindMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yKW-lE-11r"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -224,6 +272,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Budget" image="binoculars.fill" catalog="system" id="v4s-4p-bT1"/>
+                    <connections>
+                        <outlet property="foodTextField" destination="EHB-gH-GAr" id="4Gq-S3-3uv"/>
+                        <outlet property="internetTextField" destination="kol-vB-ror" id="fCz-xw-8AQ"/>
+                        <outlet property="phoneTextField" destination="ZoB-p4-Fnl" id="xwD-Xo-500"/>
+                        <outlet property="powerTextField" destination="eQF-qH-Vv6" id="fHL-xq-E5o"/>
+                        <outlet property="recreationTextField" destination="Q1U-wg-6RM" id="Y1R-qM-ZBh"/>
+                        <outlet property="rentTextField" destination="cfr-9d-2XK" id="ffl-M7-cPq"/>
+                        <outlet property="transportationTextField" destination="W5n-2D-Lyy" id="hac-mn-Oe5"/>
+                        <outlet property="waterTextField" destination="uJc-tX-p2X" id="IYJ-bd-rGT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,7 +290,7 @@
         <!--Actual-->
         <scene sceneID="c66-uG-o5y">
             <objects>
-                <viewController id="PiJ-5L-Zxs" sceneMemberID="viewController">
+                <viewController id="PiJ-5L-Zxs" customClass="ActualViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="om1-ja-ghs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +311,9 @@
                                 <rect key="frame" x="20" y="179" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addRent:" destination="PiJ-5L-Zxs" eventType="touchDown" id="wBr-Ja-AaY"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="138-v4-JOd">
                                 <rect key="frame" x="20" y="224" width="350" height="16"/>
@@ -264,6 +325,9 @@
                                 <rect key="frame" x="20" y="243" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addPower:" destination="PiJ-5L-Zxs" eventType="touchDown" id="fXG-aY-Kdr"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuI-cd-Gc2">
                                 <rect key="frame" x="20" y="288" width="350" height="16"/>
@@ -275,6 +339,9 @@
                                 <rect key="frame" x="20" y="307" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addWater:" destination="PiJ-5L-Zxs" eventType="touchDown" id="PIc-0O-zyb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKO-my-NOY">
                                 <rect key="frame" x="20" y="352" width="350" height="16"/>
@@ -286,6 +353,9 @@
                                 <rect key="frame" x="20" y="371" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addInternet:" destination="PiJ-5L-Zxs" eventType="touchDown" id="fPU-48-qcb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDK-2W-PwL">
                                 <rect key="frame" x="20" y="416" width="350" height="16"/>
@@ -297,6 +367,9 @@
                                 <rect key="frame" x="20" y="435" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addPhone:" destination="PiJ-5L-Zxs" eventType="touchDown" id="cF0-U5-NhR"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-h1-Iw3">
                                 <rect key="frame" x="20" y="480" width="350" height="16"/>
@@ -308,6 +381,9 @@
                                 <rect key="frame" x="20" y="499" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addFood:" destination="PiJ-5L-Zxs" eventType="touchDown" id="gZE-AN-NWh"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InW-sr-YUt">
                                 <rect key="frame" x="20" y="544" width="350" height="16"/>
@@ -319,6 +395,9 @@
                                 <rect key="frame" x="20" y="563" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addTransportation:" destination="PiJ-5L-Zxs" eventType="touchDown" id="rUf-SJ-RWs"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recreation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJr-Ql-MYP">
                                 <rect key="frame" x="20" y="608" width="350" height="16"/>
@@ -330,6 +409,9 @@
                                 <rect key="frame" x="20" y="627" width="123" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addRecreation:" destination="PiJ-5L-Zxs" eventType="touchDown" id="pCm-nV-eeS"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-Jj-iPY">
                                 <rect key="frame" x="328" y="186" width="42" height="21"/>
@@ -453,6 +535,24 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Actual" image="dollarsign.circle.fill" catalog="system" id="Svj-hS-MxU"/>
+                    <connections>
+                        <outlet property="foodLabel" destination="JaN-TZ-yzX" id="fBU-WT-PK9"/>
+                        <outlet property="foodTextField" destination="ft4-S1-No5" id="wyL-O2-0Cf"/>
+                        <outlet property="internetLabel" destination="gMB-rg-dKH" id="zRp-5N-coM"/>
+                        <outlet property="internetTextField" destination="Up2-l0-MVc" id="yUF-oj-tah"/>
+                        <outlet property="phoneLabel" destination="DB8-vj-X9J" id="7RC-7e-DHx"/>
+                        <outlet property="phoneTextField" destination="RqH-Xh-m2c" id="L6p-gn-1oE"/>
+                        <outlet property="powerLabel" destination="TwG-XD-Dao" id="mO3-kt-YfA"/>
+                        <outlet property="powerTextField" destination="jip-B2-BAt" id="8LS-YD-eSc"/>
+                        <outlet property="recreationLabel" destination="Xvr-do-hn3" id="w7q-pz-aOM"/>
+                        <outlet property="recreationTextField" destination="4aJ-Rj-G08" id="6gE-wZ-QMt"/>
+                        <outlet property="rentLabel" destination="yFx-Jj-iPY" id="5q6-KB-MMz"/>
+                        <outlet property="rentTextField" destination="tXW-mY-1hL" id="kdE-tj-KgO"/>
+                        <outlet property="transportationLabel" destination="qSb-0X-vmC" id="CZX-BJ-5mF"/>
+                        <outlet property="transportationTextField" destination="gJB-RZ-m0D" id="etv-y4-e0Q"/>
+                        <outlet property="waterLabel" destination="Q3G-YR-hAQ" id="g9n-Xi-Zz0"/>
+                        <outlet property="waterTextField" destination="LKh-tY-yG5" id="Zbm-vS-JCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPH-Rj-0lO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -464,6 +564,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8sa-pp-DWK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q5y-AU-zDx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
