@@ -9,6 +9,8 @@ import UIKit
 
 class ActualViewController: UIViewController {
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     @IBOutlet weak var rentTextField: UITextField!
     @IBOutlet weak var powerTextField: UITextField!
     @IBOutlet weak var waterTextField: UITextField!
@@ -28,6 +30,7 @@ class ActualViewController: UIViewController {
     @IBOutlet weak var recreationLabel: UILabel!
     
     @IBOutlet weak var monthButton: UIBarButtonItem!
+    var titleMonth = "January"
     
     var rent: Double = 0
     var power: Double = 0
@@ -40,6 +43,8 @@ class ActualViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navBar.topItem?.title = "My \(titleMonth) Expenses"
     }
     
     @IBAction func selectMonth(_ sender: Any) {
@@ -160,15 +165,4 @@ class ActualViewController: UIViewController {
     @IBAction func addRecreation(_ sender: Any) {
         showAddAlert(expenseCategory: "Recreation", textField: recreationTextField, label: recreationLabel)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

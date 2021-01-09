@@ -205,12 +205,22 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o18-lu-QR1">
-                                <rect key="frame" x="134" y="77" width="240" height="392"/>
+                                <rect key="frame" x="134" y="77" width="240" height="527"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="392" id="D3T-sp-YJM"/>
+                                    <constraint firstAttribute="height" constant="527" id="D3T-sp-YJM"/>
                                     <constraint firstAttribute="width" constant="240" id="SmZ-3N-t8U"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonthCell" id="Bbm-7B-oii">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bbm-7B-oii" id="2s3-BD-ONH">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="2mS-nr-Waj"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Lum-3g-mPo"/>
@@ -296,6 +306,8 @@
                         <outlet property="foodTextField" destination="EHB-gH-GAr" id="4Gq-S3-3uv"/>
                         <outlet property="internetTextField" destination="kol-vB-ror" id="fCz-xw-8AQ"/>
                         <outlet property="monthButton" destination="PRz-K2-2fh" id="Fkt-Xk-rcu"/>
+                        <outlet property="monthList" destination="o18-lu-QR1" id="KL3-ez-PYR"/>
+                        <outlet property="navBar" destination="uum-Xf-FtB" id="C0v-hk-cuf"/>
                         <outlet property="phoneTextField" destination="ZoB-p4-Fnl" id="xwD-Xo-500"/>
                         <outlet property="powerTextField" destination="eQF-qH-Vv6" id="fHL-xq-E5o"/>
                         <outlet property="recreationTextField" destination="Q1U-wg-6RM" id="Y1R-qM-ZBh"/>
@@ -576,6 +588,7 @@
                         <outlet property="internetLabel" destination="gMB-rg-dKH" id="zRp-5N-coM"/>
                         <outlet property="internetTextField" destination="Up2-l0-MVc" id="yUF-oj-tah"/>
                         <outlet property="monthButton" destination="Ooo-Hi-K1i" id="D6C-37-jpD"/>
+                        <outlet property="navBar" destination="bCW-hs-OPF" id="0FZ-Lc-igH"/>
                         <outlet property="phoneLabel" destination="DB8-vj-X9J" id="7RC-7e-DHx"/>
                         <outlet property="phoneTextField" destination="RqH-Xh-m2c" id="L6p-gn-1oE"/>
                         <outlet property="powerLabel" destination="TwG-XD-Dao" id="mO3-kt-YfA"/>

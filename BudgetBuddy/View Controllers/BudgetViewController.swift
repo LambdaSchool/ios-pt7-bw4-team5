@@ -8,7 +8,9 @@
 import UIKit
 import EventKit
 
-class BudgetViewController: UIViewController {
+class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var rentTextField: UITextField!
     @IBOutlet weak var powerTextField: UITextField!
@@ -20,6 +22,9 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var recreationTextField: UITextField!
     
     @IBOutlet weak var monthButton: UIBarButtonItem!
+    @IBOutlet weak var monthList: UITableView!
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    var titleMonth = "January"
     
     var rent: Double = 0
     var power: Double = 0
@@ -35,6 +40,11 @@ class BudgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navBar.topItem?.title = "My \(titleMonth) Budget"
+        monthList.layer.cornerRadius = 7
+        monthList.layer.borderWidth = 0.5
+        monthList.layer.borderColor = UIColor.gray.cgColor
+        monthList.isHidden = true
         updateValues()
     }
     
@@ -48,12 +58,17 @@ class BudgetViewController: UIViewController {
             secondTab.food = food
             secondTab.transportation = transportation
             secondTab.recreation = recreation
+            secondTab.titleMonth = titleMonth
         }
     }
     
     @IBAction func selectMonth(_ sender: Any) {
+        if monthList.isHidden {
+            monthList.isHidden = false
+        } else {
+            monthList.isHidden = true
+        }
     }
-    
     
     // MARK: - Enter Budget Amounts
     
@@ -110,7 +125,6 @@ class BudgetViewController: UIViewController {
     
     @IBAction func addPower(_ sender: Any) {
         showAddAlert(budgetCategory: "Power", textField: powerTextField)
-        
     }
     
     @IBAction func addWater(_ sender: Any) {
@@ -218,14 +232,28 @@ class BudgetViewController: UIViewController {
         showReminderAlert(budgetCategory: "recreation", amount: recreation)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Month Selection
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        months.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MonthCell", for: indexPath)
+        
+        cell.textLabel?.text = months[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = months[indexPath.row]
+        
+        navBar.topItem?.title = "My \(selectedItem) Budget"
+        
+        monthList.isHidden = true
+        
+        updateValues()
+    }
 
 }
