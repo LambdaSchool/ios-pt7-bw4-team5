@@ -62,5 +62,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSRemindersUsageDescription</key>
+	<string>We need your permission to set reminders</string>
 </dict>
 </plist>

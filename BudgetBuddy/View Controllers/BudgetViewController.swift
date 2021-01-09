@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EventKit
 
 class BudgetViewController: UIViewController {
     
@@ -17,12 +18,42 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var foodTextField: UITextField!
     @IBOutlet weak var transportationTextField: UITextField!
     @IBOutlet weak var recreationTextField: UITextField!
+    
+    @IBOutlet weak var monthButton: UIBarButtonItem!
+    
+    var rent: Double = 0
+    var power: Double = 0
+    var water: Double = 0
+    var internet: Double = 0
+    var phone: Double = 0
+    var food: Double = 0
+    var transportation: Double = 0
+    var recreation: Double = 0
+    
+    var eventStore = EKEventStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        updateValues()
     }
+    
+    func updateValues() {
+        if let secondTab = self.tabBarController?.viewControllers?[1] as? ActualViewController {
+            secondTab.rent = rent
+            secondTab.power = power
+            secondTab.water = water
+            secondTab.internet = internet
+            secondTab.phone = phone
+            secondTab.food = food
+            secondTab.transportation = transportation
+            secondTab.recreation = recreation
+        }
+    }
+    
+    @IBAction func selectMonth(_ sender: Any) {
+    }
+    
     
     // MARK: - Enter Budget Amounts
     
@@ -31,15 +62,38 @@ class BudgetViewController: UIViewController {
         
         var amountTextField: UITextField?
         
-        alert.addTextField { (textField) in
-            textField.placeholder = "Amount:"
-            amountTextField = textField
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Amount:"
+            alertTextField.keyboardType = .decimalPad
+            amountTextField = alertTextField
         }
         
         let addAmountAction = UIAlertAction(title: "Add \(budgetCategory)", style: .default) { (_) in
-            guard let amountText = amountTextField?.text else { return }
+            guard let amountText = amountTextField?.text,
+                  let amount = Double(amountText) else { return }
             
-            textField.text = "$\(amountText)"
+            let finalAmount = String(format: "%.2f", amount)
+            textField.text = "$\(finalAmount)"
+            
+            if budgetCategory == "Rent" {
+                self.rent = amount
+            } else if budgetCategory == "Power" {
+                self.power = amount
+            } else if budgetCategory == "Water" {
+                self.water = amount
+            } else if budgetCategory == "Internet" {
+                self.internet = amount
+            } else if budgetCategory == "Phone" {
+                self.phone = amount
+            } else if budgetCategory == "Food" {
+                self.food = amount
+            } else if budgetCategory == "Transportation" {
+                self.transportation = amount
+            } else if budgetCategory == "Recreation" {
+                self.recreation = amount
+            }
+            
+            self.updateValues()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -56,6 +110,7 @@ class BudgetViewController: UIViewController {
     
     @IBAction func addPower(_ sender: Any) {
         showAddAlert(budgetCategory: "Power", textField: powerTextField)
+        
     }
     
     @IBAction func addWater(_ sender: Any) {
@@ -84,28 +139,83 @@ class BudgetViewController: UIViewController {
     
     // MARK: - Add Payment Reminders
     
+    func addReminder(budgetCategory: String, amount: Double) {
+        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
+            granted, error in
+            if (granted) && (error == nil) {
+                print("granted \(granted)")
+                
+                let currencyAmount = String(format: "%.2f", amount)
+                let reminder:EKReminder = EKReminder(eventStore: self.eventStore)
+                reminder.title = "Pay the $\(currencyAmount) \(budgetCategory) bill"
+                
+                let alarmTime = Date().addingTimeInterval(10)
+                let alarm = EKAlarm(absoluteDate: alarmTime)
+                reminder.addAlarm(alarm)
+                
+                reminder.calendar = self.eventStore.defaultCalendarForNewReminders()
+                
+                do {
+                    try self.eventStore.save(reminder, commit: true)
+                } catch {
+                    print("Cannot save")
+                    return
+                }
+                print("Reminder saved")
+            }
+        })
+    }
+    
+    func showReminderAlert(budgetCategory: String, amount: Double) {
+        let currencyAmount = String(format: "%.2f", amount)
+        
+        let alert = UIAlertController(title: "\(budgetCategory.capitalized) reminder added", message: "Reminder: Pay the $\(currencyAmount) \(budgetCategory) bill", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func rentRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "rent", amount: rent)
+        showReminderAlert(budgetCategory: "rent", amount: rent)
     }
     
     @IBAction func powerRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "power", amount: power)
+        showReminderAlert(budgetCategory: "power", amount: power)
     }
     
     @IBAction func waterRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "water", amount: water)
+        showReminderAlert(budgetCategory: "water", amount: water)
     }
     
     @IBAction func internetRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "internet", amount: internet)
+        showReminderAlert(budgetCategory: "internet", amount: internet)
     }
     
     @IBAction func phoneRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "phone", amount: phone)
+        showReminderAlert(budgetCategory: "phone", amount: phone)
     }
     
     @IBAction func foodRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "food", amount: food)
+        showReminderAlert(budgetCategory: "food", amount: food)
     }
     
     @IBAction func transportationRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "transportation", amount: transportation)
+        showReminderAlert(budgetCategory: "transportation", amount: transportation)
     }
     
     @IBAction func recreationRemindMe(_ sender: Any) {
+        addReminder(budgetCategory: "recreation", amount: recreation)
+        showReminderAlert(budgetCategory: "recreation", amount: recreation)
     }
     
     /*

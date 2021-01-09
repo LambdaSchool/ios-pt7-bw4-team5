@@ -9,8 +9,6 @@ import Foundation
 import CoreData
 
 class MoneyController {
-    let sharedController = MoneyController()
-    
     var budget = Budget()
     var actual = Actual()
 }
